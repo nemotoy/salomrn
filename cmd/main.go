@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/nemotoy/mreclen"
+	"github.com/nemotoy/salomrn"
 	"golang.org/x/tools/go/analysis/singlechecker"
 )
 
-func main() { singlechecker.Main(mreclen.Analyzer) }
+func main() { singlechecker.Main(salomrn.Analyzer) }

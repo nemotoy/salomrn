@@ -1,4 +1,4 @@
-package mreclen
+package salomrn
 
 import (
 	"go/ast"
@@ -8,7 +8,7 @@ import (
 )
 
 var Analyzer = &analysis.Analyzer{
-	Name: "mreclen",
+	Name: "salomrn",
 	Doc:  Doc,
 	Run:  run,
 	Requires: []*analysis.Analyzer{
@@ -17,7 +17,7 @@ var Analyzer = &analysis.Analyzer{
 }
 
 const (
-	Doc    = "mreclen is ..."
+	Doc    = "salomrn is ..."
 	maxLen = 2
 )
 

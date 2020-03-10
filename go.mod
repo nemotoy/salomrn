@@ -1,4 +1,4 @@
-module github.com/nemotoy/mreclen
+module github.com/nemotoy/salomrn
 
 go 1.13
 
