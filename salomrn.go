@@ -17,7 +17,7 @@ var Analyzer = &analysis.Analyzer{
 }
 
 const (
-	Doc    = "salomrn is ..."
+	Doc    = "salomrn analyzes the length of the method's receiver names"
 	maxLen = 2
 )
 
