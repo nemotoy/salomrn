@@ -25,7 +25,6 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	for _, f := range pass.Files {
 		for _, d := range f.Decls {
 			if v, ok := d.(*ast.FuncDecl); ok {
-				// verify v.Recv if not nil
 				if v.Recv != nil {
 					r := v.Recv.List[0].Names[0].Name
 					if len(r) > defMaxLen {
