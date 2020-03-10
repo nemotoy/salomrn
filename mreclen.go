@@ -27,8 +27,10 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			if v, ok := d.(*ast.FuncDecl); ok {
 				// verify v.Recv if not nil
 				if v.Recv != nil {
-					// prints method name and it recever name
-					fmt.Println(v.Name, v.Recv.List[0].Names[0])
+					r := v.Recv.List[0].Names[0].Name
+					if len(r) > 2 {
+						fmt.Printf("[Warning] method's receiver(%s) length overs max length\n", r)
+					}
 				}
 			}
 		}
