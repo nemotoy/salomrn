@@ -1,3 +1,9 @@
 package sample
 
-func xxx() {}
+func dummyFunc() {}
+
+func is(s string, i int) bool { return false }
+
+type client struct{}
+
+func (c *client) dummyMethod() {}
