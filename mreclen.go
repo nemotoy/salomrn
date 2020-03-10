@@ -1,7 +1,6 @@
 package mreclen
 
 import (
-	"fmt"
 	"go/ast"
 
 	"golang.org/x/tools/go/analysis"
@@ -17,7 +16,10 @@ var Analyzer = &analysis.Analyzer{
 	},
 }
 
-const Doc = "mreclen is ..."
+const (
+	Doc       = "mreclen is ..."
+	defMaxLen = 2
+)
 
 func run(pass *analysis.Pass) (interface{}, error) {
 	for _, f := range pass.Files {
@@ -28,8 +30,8 @@ func run(pass *analysis.Pass) (interface{}, error) {
 				// verify v.Recv if not nil
 				if v.Recv != nil {
 					r := v.Recv.List[0].Names[0].Name
-					if len(r) > 2 {
-						fmt.Printf("[Warning] method's receiver(%s) length overs max length\n", r)
+					if len(r) > defMaxLen {
+						pass.Reportf(v.Pos(), "method's receiver(%s) length overs max length(%d)", r, defMaxLen)
 					}
 				}
 			}
