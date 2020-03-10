@@ -1,11 +1,9 @@
-package sample
+package a
 
-func dummyFunc() {} // OK
-
-func is(s string, i int) bool { return false } // OK
+func f() {} // OK
 
 type client struct{}
 
-func (c *client) dummyMethod() {} // OK
+func (c *client) m() {} // OK
 
-func (cli *client) dummyMethod2() {} // want "cli should be a one or two letter"
+func (cli *client) m2() {} // want "cli should be a one or two letter"
