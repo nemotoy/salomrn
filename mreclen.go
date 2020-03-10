@@ -17,8 +17,8 @@ var Analyzer = &analysis.Analyzer{
 }
 
 const (
-	Doc       = "mreclen is ..."
-	defMaxLen = 2
+	Doc    = "mreclen is ..."
+	maxLen = 2
 )
 
 func run(pass *analysis.Pass) (interface{}, error) {
@@ -27,7 +27,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			if v, ok := d.(*ast.FuncDecl); ok {
 				if v.Recv != nil {
 					r := v.Recv.List[0].Names[0].Name
-					if len(r) > defMaxLen {
+					if len(r) > maxLen {
 						pass.Reportf(v.Pos(), "%s should be a one or two letter", r)
 					}
 				}
