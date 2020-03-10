@@ -6,4 +6,6 @@ type client struct{}
 
 func (c *client) m() {} // OK
 
-func (cli *client) m2() {} // want "cli should be a one or two letter"
+func (cl *client) m2() {} // OK
+
+func (cli *client) m3() {} // want "cli should be a one or two letter"
