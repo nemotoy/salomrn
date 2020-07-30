@@ -18,9 +18,9 @@ jobs:
       with:
         go-version: ${{ matrix.go }}
     - name: Lint
-      run: |
-        curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.23.8
-        ./bin/golangci-lint run -v ./...
+      uses: golangci/golangci-lint-action@v1
+      with:
+          version: v1.25
     - name: Use cache dependencies
       uses: actions/cache@v1
       id: cache
